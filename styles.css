@@ -1,0 +1,60 @@
+:root {
+  --bg: #f7f5f0;
+  --fg: #141414;
+  --muted: #6b6b6b;
+  --accent: #ff5a36;
+  --card: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #111111; --fg: #f2f2f2; --muted: #9a9a9a; --card: #1c1c1c; }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+}
+a { color: inherit; text-decoration: none; }
+
+.site-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px clamp(16px, 5vw, 64px);
+  position: sticky; top: 0; background: var(--bg); z-index: 10;
+}
+.logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em; }
+.logo span { color: var(--accent); }
+nav { display: flex; gap: 20px; }
+nav a { color: var(--muted); }
+nav a:hover { color: var(--fg); }
+
+.hero { padding: clamp(64px, 14vw, 160px) clamp(16px, 5vw, 64px); }
+.hero h1 { font-size: clamp(2.5rem, 8vw, 6rem); line-height: 1; letter-spacing: -0.04em; }
+.hero p { margin: 24px 0 32px; font-size: 1.2rem; color: var(--muted); }
+
+.button {
+  display: inline-block; padding: 14px 26px; border-radius: 999px;
+  background: var(--accent); color: #fff; font-weight: 600;
+}
+.button:hover { opacity: 0.9; }
+
+.section { padding: 64px clamp(16px, 5vw, 64px); }
+.section h2 { font-size: 2rem; margin-bottom: 32px; letter-spacing: -0.02em; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+.card { background: var(--card); border-radius: 16px; overflow: hidden; padding-bottom: 16px; }
+.card h3, .card p { padding: 0 16px; }
+.card h3 { margin-top: 16px; }
+.card p { color: var(--muted); }
+.thumb { aspect-ratio: 4 / 3; }
+.t1 { background: linear-gradient(135deg, #ff5a36, #ffb199); }
+.t2 { background: linear-gradient(135deg, #3654ff, #99c2ff); }
+.t3 { background: linear-gradient(135deg, #1fa37a, #b5f2d9); }
+
+.services { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
+.services p { color: var(--muted); }
+
+.contact p { margin-bottom: 24px; color: var(--muted); }
+
+.site-footer { padding: 32px clamp(16px, 5vw, 64px); color: var(--muted); font-size: 0.9rem; }
